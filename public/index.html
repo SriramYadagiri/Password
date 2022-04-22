@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="words.js"></script>
+</head>
+<body>
+    <div id="inputs">
+        <input type="text" id="usernameInput" placeholder = "Username" value = ""/>
+        <br>
+        <input type="text" id="gameCodeInput" placeholder = "Game Code" value = ""/>
+        <br>
+        <button id="joinGame" type="button" onclick="joinGame()">Join Game</button>
+        <br>
+        <br>
+        <button id="createGame" type="button" onclick="createGame()">Create Game</button>
+    </div>
+    <div id="room" style="display: none;">
+        <h1 id="gameId"></h1>
+        <ul id="names"></ul>
+        <button id="startGame" type="button" onclick="startGame()" style="display: none">Start Game</button>
+    </div>
+    <div id="game" style="display: none;">
+        <h2 id="infoDisplay"></h2>
+        <div id="creator" style="display: none">
+            <input type="text" id="createWord" placeholder = "word" value = ""/>
+            <button id="createWordButton" onclick="createWord()">Submit</button>
+        </div>
+        <div id="guesser" style="display: none">
+            <input type="text" id="guessWord" placeholder = "word" value = ""/>
+            <br>
+            <input type="text" id="clue" placeholder = "clue" value = ""/>
+            <br>
+            <button id="guessWordButton" onclick="guessWord()">Submit</button>
+        </div>
+        <div id="response" style="display: none">
+            <input type="text" id="responseText" placeholder = "Guess the word" value = ""/>
+            <button id="responseButton" onclick="respond()">Submit</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
